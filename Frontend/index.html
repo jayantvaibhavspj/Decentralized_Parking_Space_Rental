@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Rental DApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 Parking Rental DApp</h1>
+        </header>
+        
+        <section class="form-section">
+            <h2>📍 List a Parking Space</h2>
+            <input type="text" id="location" placeholder="Enter Location">
+            <input type="number" id="price" placeholder="Price per Hour (ETH)">
+            <button onclick="listParkingSpace()">List Parking</button>
+        </section>
+
+        <section class="form-section">
+            <h2>🕒 Rent a Parking Space</h2>
+            <input type="number" id="spaceId" placeholder="Parking Space ID">
+            <input type="number" id="hours" placeholder="Hours to Rent">
+            <button onclick="rentParkingSpace()">Rent Now</button>
+        </section>
+
+        <section class="status">
+            <h2>✅❤️ Available Parking Spaces😉</h2>
+            <ul id="parkingList"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadParkingSpaces();
+        });
+    </script>
+</body>
+</html>
